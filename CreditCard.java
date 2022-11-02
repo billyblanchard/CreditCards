@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;  // Import the Scanner class
 
 public class CreditCard {
@@ -19,15 +18,14 @@ public class CreditCard {
 
     public static void main(String[] arg) {
 
-        String name = "json";
-        name = "Bil";
+        displayMenu();
         Scanner userInput = new Scanner(System.in);
 
         System.out.println("How many credit cards do you have? " );
 
         int numOfCards = userInput.nextInt();
-        // create an arry of size 'numOfCards'
-        double [] cards = new double[numOfCards];
+        // create an array of size 'numOfCards'
+        double [] cards;
         System.out.println("Okay, you have " + numOfCards + " credit cards" );
 
        cards = promptUserForCardBalance(numOfCards);
@@ -36,7 +34,7 @@ public class CreditCard {
 
     }
 
-    //write a method that takes in the number of cards a user has and prompts the
+    //write a method that takes in the number of cards a user has then prompts
     // the user to enter in balance for each card
 
     public static double[] promptUserForCardBalance(int num){
@@ -61,5 +59,22 @@ public class CreditCard {
         for(int i= 0; i < clen; i++){
             System.out.println("Card Account: " + (i+1) + " Balance: $" + String.format("%.2f",cards[i]));
         }
+    }
+
+    // create a menu that asks the user what would they like do
+
+    public static void displayMenu() {
+        System.out.println("Select an option");
+
+        Scanner userInput = new Scanner(System.in);
+
+
+        int exit = 0;
+        while(userInput.nextInt() != exit) {
+            System.out.println("Select an option");
+            System.out.println("1.");
+        }
+
+        System.out.print("Exiting Menu!");
     }
 }
